@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<script type="text/javascript">
+/*Erick Munoz
+September 24th, 2014
+Purpose: 2 Dimensional Arrays
+*/
+</script>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Retirement Account</title>
+</head>
+
+<body>
+<h1>Retirement Table</h1>
+<script type="text/javascript">
+	//setup the savings table
+		var balance = 100;	//unit = dollars
+		var intRate = 5;	//unit = percentage rate per annual
+		var deposit = 7500;	//deposit unit = $'s
+		var str="";			//string for document.write
+		//Declare your table
+	
+		var years=[];
+		var savings=[];
+		var interest=[];
+		var yearDep=[];	
+		var retTable=[];
+		var cols=4
+		for(var col=0;col<cols;col++){
+			retTable[col]=[];
+		}
+		//initialize the first element
+		retTable[0][0]=0;//year
+		retTable[1][0]=balance;//savings
+		retTable[2][0]=0;//interest
+		retTable[3][0]=0;//deposit
+		//Populate the Arrays
+		for(var year = 1;year<=50;year++){
+			retTable[0][year]=year;
+			retTable[2][year]=retTable[year-1]*intRate/100;
+			retTable[3][year]=deposit;
+			retTable[1][year]=retTable[1][year-1]+retTable
+		}
+			
+</script>
+ <table width="200" border="1">
+  <tr>
+    <th>Year</th>
+    <th>Savings</th>
+  </tr>
+<script type="text/javascript">
+	for (var year=1;year<=50;++year){
+	str+="<tr>";
+	str+=("<td>"+retTable[0][year].tofixed(0)+"</td>")
+	for (var col=0;col<cols;col++){
+		str+=("<td>"+retTable[col][year].tofixed(2)+"<td>");
+		}
+	str+="</tr>";
+	}
+	document.write(str);
+	document.write("<p>Number of Rows = "+retTable[0].length+"</p>");
+	document.write("<p>Number of Rows = "+retTable[1].length+"</p>");
+	document.write("<p>Number of Rows = "+retTable[2].length+"</p>");
+	document.write("<p>Number of Rows = "+retTable[3].length+"</p>");
+	document.write("<p>Number of Columns = "+retTable.length+"</p>");
+	document.write("<p>Type of Rows = "+typeof(retTable[3]).length+"</p>");
+	document.write("<p>Type of Columns = "+typeof(retTable)+"</p>");
+</script>
+</table>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Proof of Local Storage</title>
+</head>
+
+<body>
+<script type="text/javascript">
+
+	var lsText = localStorage.getItem("trial1");
+	var obj=JSON.parse(lsText);
+	for(property in obj){
+		document.write(property+"="+obj[property]+"</br>")
+	}
+	document.write("<br/>");
+	var lsText2 = localStorage.getItem("trial2");
+	var obj2=JSON.parse(lsText2);
+	for(property in obj2){
+		document.write(property+"="+obj2[property]+"</br>");
+	}
+	document.write("<br/>");
+</script>
+
+</body>
+</html>
